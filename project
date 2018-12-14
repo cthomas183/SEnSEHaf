@@ -1,0 +1,13 @@
+from sense_hat import SenseHat
+sense = SenseHat()
+
+s = (255, 255, 255)
+
+def draw_slug():
+    for segment in slug:
+        sense.set_pixel(segment[1], segment[1], s)
+
+if last [0] + 1 == 8:
+    next[0] = 0
+else:
+    next[0] = last[0] + 1
