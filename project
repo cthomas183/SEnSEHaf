@@ -1,13 +1,80 @@
-from sense_hat import SenseHat
+from sense_hat import *
+from time import sleep
+from random import randint
+
 sense = SenseHat()
+sense.clear()
 
-s = (255, 255, 255)
+def wait_for_move():
+  while True:
+    e = sense.stick.wait_for_event()
+    if e.action != ACTION_RELEASED:
+      return e
 
-def draw_slug():
-    for segment in slug:
-        sense.set_pixel(segment[1], segment[1], s)
-
-if last [0] + 1 == 8:
-    next[0] = 0
-else:
-    next[0] = last[0] + 1
+R = [255, 0, 0]  # red
+Y = [255, 255, 0] # yellow
+G = [0, 255, 0] # green
+W = [255, 255, 255] # white
+  
+  score = 0
+  
+  for turns in range(10):
+  
+    coinx = randint(0,7)
+    coiny = randint(0,7)
+    print(coinx, coiny)
+   
+    if  x ==coinx and y == coiny:
+      sense.set_pixel(x, y, G)
+      score+= 1
+    else:
+      sense.set_pixel(coinx, xoiny, y)
+    
+    sleep(1)
+    sense.clear()
+    
+    x = randint(0,7)
+    y = randint(0,7)
+    sense.set_pixel(x, y, W)
+    
+    while True:
+    
+      e = wait_for_move()
+      
+      sense.clear()
+      
+      if e.direction == DIRECTION_UP and y > 0:
+        y = y - 1
+      elif e.dirction == DIRECTION_DOWN and y < 7:
+        y = y + 1
+        
+      elif e.direction == DIRECTION_LEFT and x > 0:
+       x = x - 1
+      
+      elif e.direction == DIRECTION_RIGHT and x < 7:
+        x = x + 1
+    
+      sense.set_pixel(x, y, W)
+    
+    while true:
+      
+      e = wait_for_move()
+      
+      if e.direction == DIRECTION_MIDDLE:
+      
+          if x == coinx andy == coiny:
+            sense.set_pixel(x, y, G)
+          else:
+            sense.set_pixel
+            
+          sleep(1)
+          sense.clear()
+          break;
+  
+  sense.clear()
+  
+  if e.direction == DIRECTION_UP and y > 0:
+    y = y - 1
+  
+  elif e.direction == DIRECTION_DOWN and y < 7:
+  
