@@ -55,26 +55,3 @@ W = [255, 255, 255] # white
         x = x + 1
     
       sense.set_pixel(x, y, W)
-    
-    while true:
-      
-      e = wait_for_move()
-      
-      if e.direction == DIRECTION_MIDDLE:
-      
-          if x == coinx andy == coiny:
-            sense.set_pixel(x, y, G)
-          else:
-            sense.set_pixel
-            
-          sleep(1)
-          sense.clear()
-          break;
-  
-  sense.clear()
-  
-  if e.direction == DIRECTION_UP and y > 0:
-    y = y - 1
-  
-  elif e.direction == DIRECTION_DOWN and y < 7:
-  
